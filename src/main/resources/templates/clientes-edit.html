@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="pt-BR">
+        <head th:replace="~{base::head(Atualizar)}"></head>
+    <body>
+        <header th:replace="~{base::cabecalho}"></header>
+        <main>
+            <div class="card mt-5 shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">Atualizar Cliente</h2>
+                    <form action="/clientes/salvar" method="post">
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <label for="nome" class="form-label">Nome</label>            
+                                <input class="form-control" type="text" name="nome" id="nome" th:value="${cliente.nome}">
+                            </div>
+                            <div class="col-2">
+                                <label for="idade" class="form-label">Idade</label>                 
+                                <input class="form-control" type="number" name="idade" id="idade" th:value="${cliente.idade}">
+                            </div>
+                        </div>
+                        <div class="mb-1">
+                            <label for="sobrenome" class="form-label">Sobrenome</label>                
+                            <input class="form-control" type="text" name="sobrenome" id="sobrenome" th:value="${cliente.sobrenome}">
+                        </div>
+                        
+                        <input class="invisible" type="text" name="id" id="id" th:value="${cliente.id}">
+
+                        <div class="text-center">
+                            <input class="btn btn-success px-5" type="submit" value="Salvar">
+                        </div>   
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

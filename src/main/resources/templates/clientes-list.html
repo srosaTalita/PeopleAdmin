@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head th:replace="~{base::head(Clientes)}"></head>
+    <body>
+        <header th:replace="~{base::cabecalho}"></header>
+        <main>
+
+            <div class="card mt-5 shadow-lg">
+                <div class="card-header d-flex justify-content-between">
+                    <h2 class="card-title text-primary mt-2">Pessoas</h2> 
+                    <form class="form-inline mt-3">
+                        <div class="row mb-3">
+                            <div class="col-8">
+                                <input class="form-control" name="nome" type="search" placeholder="Nome" aria-label="Buscar">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </div>
+                        </div>           
+                    </form>
+                </div>
+
+                <div class="card-body">
+                    <table class="table table-borderless table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-1">Id</th>
+                                <th class="col-3">Nome</th>
+                                <th class="col-4">Sobrenome</th>
+                                <th class="col-1">Idade</th>
+                                <th class="col-3"></th>
+                            </tr>
+                        </thead>
+                        <tbody th:each = "c : ${clientes}">
+                            <td th:text = "${c.id}"></td>
+                            <td th:text = "${c.nome}"></td>
+                            <td th:text = "${c.sobrenome}"></td>
+                            <td th:text = "${c.idade}"></td>
+                            <td>
+                                <a th:href="@{'/clientes/editar/'+${c.id}}" class="btn btn-sm btn-outline-info">Editar</a>
+                                <a th:href="@{'/clientes/deletar/'+${c.id}}" class="btn btn-sm  btn-outline-danger">Deletar</a>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+body{
+    background-color: rgba(92, 91, 91, 0.795);
+    /* background-color: rgba(0, 153, 255, 0.301); */
+}
+
+
+.esquerda{
+    float: left;
+    margin-bottom: 1em;
+}
+main{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+form{
+    text-align: left;
+}
